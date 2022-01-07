@@ -1,0 +1,81 @@
+<!-- BEGIN .with-sidebar-layout -->
+<div class="without-sidebar-layout">
+    <!-- BEGIN .video-slider -->
+    <div class="video-slider">
+        <!-- BEGIN .wrapper -->
+        <div class="wrapper" *ngIf="item">
+            <div class="slider-controls">
+                <div class="video-embed">
+                    <div class="otplayer-wrapper" >
+                        <app-elm-youtube-iframe
+                        [videoId] = "item.id"
+                        ></app-elm-youtube-iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="video-slider-meta">
+                <div class="video-slider-info right">
+                    <a href="javascript:;" class="meta-click"><i class="fa fa-comments"></i> <strong>{{ item.ratings }}</strong> comments</a>
+                    <a href="javascript:;" class="meta-click"><i class="fa fa-eye"></i> <strong>{{ item.views }}</strong> views</a>
+                    <a href="javascript:;" class="ot-like-button"><i class="fa fa-heart"></i> Like This Video</a>
+                </div>
+                <h3>{{ item.title }}</h3>
+            </div>
+        <!-- END .wrapper -->
+        </div>
+    <!-- END .video-slider -->
+    </div>
+
+    <div class="content-panel">
+        <div class="panel-title">
+            <h2>Video Details</h2>
+        </div>
+        <div class="panel-block" >
+            
+            <div class="panel-content" *ngIf="item">
+                <div class="video-author">
+                    <img src="images/photos/image-1.jpg" class="left" alt="" />
+                    <div class="author-content">
+                        <span>Added by <a href="#">Orange-Themes</a></span>
+                        <span>March 26, 2014</span>
+                    </div>
+                    <div class="clear-float"></div>
+                </div>
+
+                <div class="video-stats">
+                    <div class="video-stat-blobs">
+                        <span>
+                            <strong>192k</strong>
+                            <i>views</i>
+                        </span>
+                        <span>
+                            <strong>392</strong>
+                            <i>comments</i>
+                        </span>
+                        <span>
+                            <strong>201</strong>
+                            <i>likes</i>
+                        </span>
+                    </div>
+                    <div class="hr-spacer"></div>
+                </div>
+
+                <div class="text">
+                    <p>{{ item.description }}</p>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    <app-elm-playlist *ngIf="playlist"
+      [playlist]="playlist" 
+      [layout]="layoutDefault">
+    </app-elm-playlist>
+    
+    <div class="content-panel" app-widget-ads="article"></div>
+
+
+<!-- END .with-sidebar-layout -->
+</div>

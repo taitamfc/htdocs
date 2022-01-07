@@ -1,0 +1,18 @@
+<h3>Featured Videos</h3>
+<div class="widget-videos" *ngIf="items">
+    <!-- BEGIN .item -->
+    <div class="item" *ngFor="let item of items">
+        <div class="item-header">
+            <a [routerLink]="['playlist',item.id]"   class="video-thumb">
+                <img src="{{ item.thumbnails }}" width="16" height="9" class="aspect-px"  alt="" />
+            </a>
+        </div>
+        <div class="item-content">
+            <h3>
+                <a [routerLink]="['/playlist',item.id]">{{ item.title }}</a>
+            </h3>
+        </div>
+    </div>
+    <!-- END .item -->
+</div>
+<!-- END .widget -->

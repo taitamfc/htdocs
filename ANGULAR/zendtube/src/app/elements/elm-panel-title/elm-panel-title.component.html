@@ -1,0 +1,15 @@
+<h2>{{ title }}</h2>
+<div class="right video-set-layout">
+    <a href="#" [ngClass]="setActive('grid')" (click)="setLayout('grid')" >
+        <i class="fa fa-th"></i>
+    </a>
+    <a [ngClass]="setActive('hdgrid')" (click)="setLayout('hdgrid')">
+        <i class="fa fa-th-large"></i>
+    </a>
+    <a [ngClass]="setActive('list')" (click)="setLayout('list')">
+        <i class="fa fa-th-list"></i>
+    </a>
+    <a [ngClass]="setActive('hdlist')" (click)="setLayout('hdlist')">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>

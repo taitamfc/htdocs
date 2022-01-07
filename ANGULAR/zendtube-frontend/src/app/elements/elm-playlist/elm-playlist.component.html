@@ -1,0 +1,26 @@
+<div class="content-panel">
+    <div class="panel-title" app-elm-panel-title 
+    [title]="playlist.title" 
+    [layout]="layout"
+    (myLayout)="changeLayout($event)"
+    ></div>
+    <div class="panel-block video-list {{ layout }}" *ngIf="items">
+
+        <!-- BEGIN .item -->
+        <!-- <div class="item" app-elm-video [showDesc]="false" ></div> -->
+
+        <!-- BEGIN .item -->
+        <!-- <div class="item" app-elm-video [showDesc]="false"></div> -->
+
+        <!-- BEGIN .item -->
+        <!-- <div class="item" app-elm-video [showDesc]="false"></div> -->
+
+        <div class="item" app-elm-video [item]="item" [showDesc]="true" *ngFor="let item of items" ></div>
+        
+
+        <div class="clear-list-button">
+            <a [routerLink]="['/playlist',playlist.id]"  class="back-button">View More Videos</a>
+        </div>
+
+    </div>
+</div>

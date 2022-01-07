@@ -1,0 +1,78 @@
+<!-- .app -->
+<div class="app">
+    <!-- .app-aside -->
+    <app-elements-header></app-elements-header>
+    <aside class="app-aside app-aside-expand-md app-aside-light">
+        <app-elements-sidebar></app-elements-sidebar>
+    </aside>
+    <!-- .app-main -->
+    <main class="app-main">
+        <!-- .wrapper -->
+        <div class="wrapper">
+            <!-- .page -->
+            <div class="page">
+                <!-- .page-inner -->
+
+                <div class="page-inner" >
+                    <!-- .page-section -->
+                    <div class="page-section">
+                        <!-- .section-block -->
+                        <div class="section-block">
+                            <!-- page content goes here -->
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div id="jstree" [attr.data-url]="jsonUrl"></div>
+                                </div>
+                                <div class="col-lg-9">
+                                    <div id="jstree_editor" *ngIf="selected_files.length > 0">
+                                        <!-- .card -->
+                                        <div class="card card-fluid">
+                                            <!-- .card-header -->
+                                            <div class="card-header nav-scroller">
+                                                <!-- .nav-tabs -->
+                                                <ul class="nav nav-tabs card-header-tabs">
+                                                    <li class="nav-item"
+                                                        *ngFor="let selected_file of selected_files; index as i;let last = last;">
+                                                        <a (click)="changeContentFile(selected_file)" class="nav-link "
+                                                            [class.active]="last" data-toggle="tab"
+                                                            href="javascript:;">{{
+                                                            selected_file }}</a>
+                                                    </li>
+                                                </ul><!-- /.nav-tabs -->
+                                            </div><!-- /.card-header -->
+                                            <!-- .card-body -->
+                                            <div class="card-body">
+
+                                                <ngx-codemirror [(ngModel)]="codemirror_content"
+                                                    [options]="codemirror_options" (keyup)="handleKeyUp()">
+                                                </ngx-codemirror>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="jstree_editor_no_files" *ngIf="selected_files.length == 0">
+                                        <div id="notfound-state" class="empty-state">
+                                            <!-- .empty-state-container -->
+                                            <div class="empty-state-container">
+                                              <div class="state-figure">
+                                                <img class="img-fluid" src="assets/images/illustration/img-6.svg" alt="" style="max-width: 300px">
+                                              </div>
+                                              <h3 class="state-header"> No Content, Yet. </h3>
+                                              <p class="state-description lead text-muted"> Use the button below to add your awesomething, aperiam ex veniam suscipit porro ab saepe nobis odio. </p>
+                                              
+                                              
+                                            </div><!-- /.empty-state-container -->
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!-- /.section-block -->
+                    </div><!-- /.page-section -->
+
+                </div><!-- /.page-inner -->
+            </div><!-- /.page -->
+        </div><!-- /.wrapper -->
+    </main><!-- /.app-main -->
+</div><!-- /.app -->

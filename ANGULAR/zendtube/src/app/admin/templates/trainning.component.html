@@ -1,0 +1,8 @@
+<button (click)="onPushDataAds()">Push Ads</button>
+<button (click)="onPushDataPlaylist()">Push Playlist</button>
+<button (click)="onPushDataVideos()">Push Videos</button>
+<ul>
+  <li *ngFor="let item of items | async">
+     {{ item.id }}
+  </li>
+</ul>

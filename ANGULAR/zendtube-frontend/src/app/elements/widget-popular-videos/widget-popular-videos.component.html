@@ -1,0 +1,5 @@
+<h3>Popular Videos</h3>
+<div class="widget-videos-small" *ngIf="items.length > 0">
+    <div class="item" app-elm-video [item]="item" *ngFor="let item of items" ></div>
+</div>
+<!-- END .widget -->

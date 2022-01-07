@@ -1,0 +1,67 @@
+<main class="auth">
+  <header id="auth-header" class="auth-header"
+    style="background-image: url(../../../assets/images/illustration/img-1.png);">
+    <h1>
+      SaveMyCodes
+      <span class="sr-only">Sign In</span>
+    </h1>
+    <p> Don't have a account? <a [routerLink]="['/users/register']">Create One</a>
+    </p>
+  </header>
+  <!-- form -->
+  <form class="auth-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <!-- .form-group -->
+    <div class="form-group">
+      <div class="form-label-group">
+        <input
+        id="inputUser" 
+        [ngClass]="{ 'is-invalid': submitted && f.username.errors }" 
+        formControlName="username" 
+        type="text" 
+        class="form-control" 
+        autofocus="true"
+        required>
+        <label for="inputUser">Username</label>
+      </div>
+      <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+        <div *ngIf="f.username.errors.required">Username is required</div>
+      </div>
+    </div><!-- /.form-group -->
+    <!-- .form-group -->
+    <div class="form-group">
+      <div class="form-label-group">
+        <input
+        id="inputPassword" 
+        [ngClass]="{ 'is-invalid': submitted && f.username.errors }" 
+        formControlName="password" 
+        type="text" 
+        class="form-control" 
+        required>
+        <label for="inputPassword">Password</label>
+      </div>
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Password is required</div>
+      </div>
+    </div><!-- /.form-group -->
+    <!-- .form-group -->
+    <div class="form-group">
+      <button class="btn btn-lg btn-primary btn-block" [disabled]="loading" type="submit" >Sign
+        In</button>
+    </div><!-- /.form-group -->
+    <!-- .form-group -->
+    <div class="form-group text-center">
+      <div class="custom-control custom-control-inline custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="remember-me"> <label class="custom-control-label"
+          for="remember-me">Keep me sign in</label>
+      </div>
+    </div><!-- /.form-group -->
+    <!-- recovery links -->
+    <div class="text-center pt-3">
+      <a [routerLink]="['/forgot']" class="link">Forgot Password?</a>
+    </div><!-- /recovery links -->
+  </form>
+  <!-- /.auth-form -->
+  <!-- copyright -->
+  <footer class="auth-footer"> © 2018 All Rights Reserved. <a href="#">Privacy</a> and <a href="#">Terms</a>
+  </footer>
+</main><!-- /.auth -->

@@ -1,0 +1,18 @@
+<a href="{{ item.link }}" target="_blank" *ngIf="position=='banner' && item" >
+    <img src="{{ item.url }}" width="468" height="60" alt="" />
+</a>
+
+<div class="banner-widget no-border" *ngIf="position=='sidebar' && item">
+    <a href="{{ item.link }}" target="_blank"><img src="{{ item.url }}" width="300" height="250" alt="" /></a>
+    <a href="contact-us.html" class="banner-meta"><i class="fa fa-angle-double-up"></i> 
+        {{ item.text }}
+        <i class="fa fa-angle-double-up"></i></a>
+</div>
+
+<div class="panel-block banner-block" *ngIf="position=='article' && item">
+    <a href="{{ item.link }}" target="_blank"><img src="{{ item.url }}" width="468" height="60"
+            alt=""></a>
+    <a href="contact-us.html" class="banner-meta"><i class="fa fa-angle-double-up"></i> 
+        {{ item.text }}
+        <i class="fa fa-angle-double-up"></i></a>
+</div>
